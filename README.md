@@ -1,2 +1,2 @@
-# snum
+# Snum
 Simple parser for numbers
