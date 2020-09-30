@@ -26,16 +26,11 @@ int main(int argc, char** argv) {
   else {
     num4_t num;
     snum_ston(&num, argv[1]);
-    if (num.flags & SNUM_INF)
-      std::cout << "you typed an infinite value" << std::endl;
-    else if (num.flags & SNUM_NAN)
-      std::cout << "you typed a not-a-number (NAN) value" << std::endl;
-    else if (num.flags & SNUM_REAL)
-      std::cout << "you typed " << snum_ntov(&num).r4 << std::endl;
-    else if (num.flags & SNUM_SIGN)
-      std::cout << "you typed " << snum_ntov(&num).s4 << std::endl;
-    else
-      std::cout << "you typed " << snum_ntov(&num).u4 << std::endl;
+    if (num.flags & SNUM_INF)       std::cout << "you typed an infinite value" << std::endl;
+    else if (num.flags & SNUM_NAN)  std::cout << "you typed a not-a-number (NAN) value" << std::endl;
+    else if (num.flags & SNUM_REAL) std::cout << "you typed " << snum_ntov(&num).r4 << std::endl;
+    else if (num.flags & SNUM_SIGN) std::cout << "you typed " << snum_ntov(&num).s4 << std::endl;
+    else                            std::cout << "you typed " << snum_ntov(&num).u4 << std::endl;
   }
   return 0;
 }
